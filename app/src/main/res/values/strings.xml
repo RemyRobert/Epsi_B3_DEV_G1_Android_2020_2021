@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">EpsiTest</string>
+    <string name="txtEpsi">Epsi</string>
+    <string name="txtImage">Image</string>
+</resources>
