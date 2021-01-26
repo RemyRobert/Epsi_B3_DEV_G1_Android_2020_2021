@@ -22,6 +22,8 @@ public class ImageActivity extends EpsiActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_image);
+        showBack();
+
         String url = getIntent().getExtras().getString("url","");
         String title = getIntent().getExtras().getString("title","");
 
