@@ -32,4 +32,11 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:text="Students"/>
+    <Button
+        android:id="@+id/buttonStudentsWS"
+        android:layout_marginTop="40dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Students WS"/>
 </LinearLayout>
