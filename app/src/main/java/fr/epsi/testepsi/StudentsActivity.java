@@ -4,6 +4,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -23,17 +26,20 @@ public class StudentsActivity extends EpsiActivity {
         setContentView(R.layout.activity_students);
         setTitle("Students");
         showBack();
+        students=new ArrayList<>();
+        RecyclerView recyclerView=findViewById(R.id.recyclerViewStudents);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        StudentAdapter studentAdapter=new StudentAdapter(this,students);
+        recyclerView.setAdapter(studentAdapter);
 
         try {
-            students=new ArrayList<>();
+
             JSONObject jsonObject= new JSONObject(Data.allData);
             JSONArray jsonArray = jsonObject.getJSONArray("items");
             for(int i=0;i<jsonArray.length();i++){
                 Student student=new Student(jsonArray.getJSONObject(i));
                 students.add(student);
             }
-            Log.d("Tag","students : "+students.size());
-
         } catch (JSONException e) {
             e.printStackTrace();
         }
