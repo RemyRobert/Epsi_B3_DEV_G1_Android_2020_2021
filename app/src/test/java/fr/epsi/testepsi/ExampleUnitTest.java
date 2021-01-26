@@ -1,4 +1,4 @@
-package fr.epsi.epsitest;
+package fr.epsi.testepsi;
 
 import org.junit.Test;
 

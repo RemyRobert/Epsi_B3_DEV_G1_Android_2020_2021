@@ -1,4 +1,4 @@
-package fr.epsi.epsitest;
+package fr.epsi.testepsi;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -6,17 +6,18 @@ import android.util.Log;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class EpsiTestActivity extends AppCompatActivity {
+public class EpsiActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.d("Activity","######### onCreate ########### :"+getClass().getSimpleName());
+        Log.d("tag","############## onCreate ################# :"+getClass().getSimpleName());
     }
+
 
     @Override
     public void finish() {
         super.finish();
-        Log.d("Activity","######### finish ########### :"+getClass().getSimpleName());
+        Log.d("tag","############## finish ################# :"+getClass().getSimpleName());
     }
 }
