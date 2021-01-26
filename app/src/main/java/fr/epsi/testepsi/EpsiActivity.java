@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -33,6 +34,13 @@ public class EpsiActivity extends AppCompatActivity {
                     onBackPressed();
                 }
             });
+        }
+    }
+
+    public void setTitle(String title){
+        TextView textView=findViewById(R.id.textViewTitle);
+        if(textView!=null){
+            textView.setText(title);
         }
     }
 }

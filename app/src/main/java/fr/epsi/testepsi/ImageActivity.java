@@ -27,8 +27,7 @@ public class ImageActivity extends EpsiActivity {
         String url = getIntent().getExtras().getString("url","");
         String title = getIntent().getExtras().getString("title","");
 
-        TextView textView = findViewById(R.id.textViewTitle);
-        textView.setText(title);
+        setTitle(title);
 
         ImageView imageView = findViewById(R.id.image);
         Picasso.get().load(url).into(imageView);
