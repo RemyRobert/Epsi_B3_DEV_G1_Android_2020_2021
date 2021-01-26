@@ -3,6 +3,7 @@ package fr.epsi.testepsi;
 
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Looper;
 
 public class SplashActivity extends EpsiActivity {
 
@@ -11,7 +12,7 @@ public class SplashActivity extends EpsiActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
-        new Handler().postDelayed(new Runnable() {
+        new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
             @Override
             public void run() {
                 HomeActivity.displayActivity(SplashActivity.this);
