@@ -2,7 +2,7 @@ package fr.epsi.testepsi;
 
 public class Data {
 
-    public String allData="{\n" +
+   static public String allData="{\n" +
             "  \"items\": [\n" +
             "    {\n" +
             "      \"picture_url\": \"https://www.numerama.com/content/uploads/2019/05/trou-noir-espace-univers-astronomie.jpg\",\n" +
