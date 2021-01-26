@@ -30,6 +30,7 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.ViewHold
         private final TextView textViewName;
         private final TextView textViewEmail;
         private final ImageView imageViewStudent;
+        private final View layoutCellStudent;
 
         public ViewHolder(View view) {
             super(view);
@@ -38,6 +39,7 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.ViewHold
             textViewName = view.findViewById(R.id.textViewName);
             textViewEmail = view.findViewById(R.id.textViewEmail);
             imageViewStudent = view.findViewById(R.id.imageViewStudent);
+            layoutCellStudent = view.findViewById(R.id.layoutCellStudent);
         }
 
         public TextView getTextViewName() {
@@ -48,6 +50,9 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.ViewHold
         }
         public ImageView getImageViewStudent() {
             return imageViewStudent;
+        }
+        public View getLayoutCellStudent() {
+            return layoutCellStudent;
         }
     }
 
@@ -63,10 +68,16 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.ViewHold
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        Student student=students.get(position);
+        final Student student=students.get(position);
         holder.getTextViewName().setText(student.getName());
         holder.getTextViewEmail().setText(student.getEmail());
         Picasso.get().load(student.getUrl()).into(holder.getImageViewStudent());
+        holder.getLayoutCellStudent().setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ImageActivity.displayActivity(activity,student.getUrl(),student.getName());
+            }
+        });
     }
 
     @Override
